@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Remove Doctor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+            color: #4d4d4d;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        select {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin - Remove Doctor</h1>
+        <form id="removeDoctorForm">
+            <label for="doctorName">Select Doctor:</label>
+            <select id="doctorName" name="doctorName" required>
+                <option value="" disabled selected>Select a Doctor</option>
+            </select>
+           <button type="button" id="removeDoctorButton">Remove Doctor</button>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code to fetch doctor names and populate the dropdown menu
+        console.log('JavaScript code is running!');
+        fetch('/getDoctorNames') // Replace this with the URL to fetch doctor names from the server
+            .then(response => response.json())
+            .then(doctorNames => {
+                const selectDoctor = document.getElementById('doctorName');
+                doctorNames.forEach(doctorName => {
+                    const option = document.createElement('option');
+                    option.text = doctorName;
+                    option.value = doctorName;
+                    selectDoctor.add(option);
+                });
+            })
+            .catch(error => console.error('Error fetching doctor names:', error));
+
+        // JavaScript code to handle form submission
+         const removeDoctorForm = document.getElementById('removeDoctorForm');
+    removeDoctorForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const selectedDoctor = document.getElementById('doctorName').value;
+        if (!selectedDoctor) {
+            alert('Please select a doctor.');
+            return;
+        }
+        fetch('/dremove', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `doctorName=${encodeURIComponent(selectedDoctor)}`
+        })
+        .then(response => response.text())
+        .then(responseText => {
+            alert(responseText); // Show the response message in a popup
+            window.location.reload(); // Refresh the page to update the dropdown after removal
+        })
+        .catch(error => console.error('Error removing doctor:', error));
+    });
+</script>
+</body>
+</html>

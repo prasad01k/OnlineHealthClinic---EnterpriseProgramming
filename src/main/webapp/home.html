@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<head>
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"/>
+	<style>
+	/* body {
+  		 background:url("images/background1.jpg") no-repeat center top;
+  		 background-size: cover; 
+	} */
+	.paint-card {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display;=swap');*/
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	/* background-color: #D2FFFC; */
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #010101;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #646564;
+	text-decoration: none;
+	font-weight: 300;
+	color: #646564;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+.navbar .navbar-expand-lg .bg-body-tertiary{
+	background-color: black;
+}
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
+
+	</style>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<h:form>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary" >
+  <div class="container-fluid" >
+    <a class="navbar-brand" href="#">Online E Visa</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar navbar-nav navbar-right" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <h:commandLink class="nav-link active" aria-current="page" href="#" action="home">Home</h:commandLink>
+        </li>
+        <!--  <li class="nav-item">
+          <a class="nav-link" href="admin_login.html" action="admin_login.html" >Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="doctor_login.html" action="doctor_login.html" >Doctor</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="patient_login.html" action="patient_login.xhtml">Login</a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<!-- <marquee>50% off on every Session. This offer available till 30th july.  </marquee>
+		carousel
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/carosel1.png" class="d-block w-100" alt="..."/>
+    </div>
+    <div class="carousel-item">
+      <img src="images/carosel2.png" class="d-block w-100" alt="..."/>
+    </div>
+    <div class="carousel-item">
+      <img src="images/carosel3.png" class="d-block w-100" alt="..."/>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+	end of carosel 
+
+	Key Features of or Hospital
+	<div class="container p-3">
+		<p class="text-center fs-2 ">Key Features of our Hospital</p>
+
+		<div class="row">
+			<div class="col-md-8 p-5">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">100% Safety</p>
+								<p>Our hospital maintains the safety standards, prioritizing patient well-being through strict protocols and advanced equipment.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">Clean Environment</p>
+								<p>We ensure a sterile and hygienic healthcare setting, with meticulous cleaning practices and a focus on maintaining a pristine environment.
+     				               </p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mt-2">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">Friendly Doctors</p>
+								<p>Our compassionate and skilled doctors foster strong relationships with patients, providing personalized care and empathetic support.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mt-2">
+						<div class="card paint-card">
+							<div class="card-body">
+								<p class="fs-5">Medical Research</p>
+								<p>As a leading institution, we actively contribute to medical advancements through collaborations and participation in clinical trials, etc.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<img alt="" src="images/hospital.png" width="500" height="400"/>
+			</div>
+
+		</div>
+	</div>
+	
+	
+	footer
+	<footer class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Hospital</h4>
+  	 			<ul>
+  	 				<li><a href="#">about us</a></li>
+  	 				<li><a href="#">our services</a></li>
+  	 				<li><a href="#">privacy policy</a></li>
+  	 				<li><a href="#">affiliate program</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>get help</h4>
+  	 			<ul>
+  	 				<li><a href="#">FAQ</a></li>
+  	 				<li><a href="#">Support</a></li>
+  	 				<li><a href="#">returns</a></li>
+  	 				<li><a href="#">Appointment status</a></li>
+  	 				<li><a href="#">payment options</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Medicine shop</h4>
+  	 			<ul>
+  	 				<li><a href="#">Tablets</a></li>
+  	 				<li><a href="#">Solutions</a></li>
+  	 				<li><a href="#">Equipment</a></li>
+  	 				<li><a href="#">dress</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+
+</h:form> -->
+
+
+	</body>
+	
+</html>

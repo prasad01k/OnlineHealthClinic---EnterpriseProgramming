@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Project-Health_Clinic</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>home.html</welcome-file>
+    
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+	<servlet-name> admin_log </servlet-name>
+	<servlet-class> com.login.admin_log </servlet-class>
+</servlet>
+<servlet>
+	<servlet-name> doc_reg </servlet-name>
+	<servlet-class> com.login.doc_reg </servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>doc_remove</servlet-name>
+    <servlet-class>com.login.doc_remove</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>doctor_name_servlet</servlet-name>
+    <servlet-class>com.login.doctor_name_servlet</servlet-class>
+</servlet>
+ <servlet>
+        <servlet-name>DoctorLoginServlet</servlet-name>
+        <servlet-class>com.login.DoctorLoginServlet</servlet-class>
+    </servlet>
+<servlet>
+	<servlet-name> patient_reg </servlet-name>
+	<servlet-class> com.login.patient_reg </servlet-class>
+</servlet>
+<servlet>
+	<servlet-name> patient_log </servlet-name>
+	<servlet-class> com.login.patient_log </servlet-class>
+</servlet>
+   
+   
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+    <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name> admin_log </servlet-name>
+	<url-pattern>/log</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name> doc_reg </servlet-name>
+	<url-pattern>/dreg</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>doc_remove</servlet-name>
+    <url-pattern>/dremove</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>doctor_name_servlet</servlet-name>
+    <url-pattern>/getDoctorNames</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+        <servlet-name>DoctorLoginServlet</servlet-name>
+        <url-pattern>/doctor_login</url-pattern>
+    </servlet-mapping>
+<servlet-mapping>
+<servlet-name> patient_reg </servlet-name>
+	<url-pattern>/preg</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name> patient_log </servlet-name>
+	<url-pattern>/plog</url-pattern>
+</servlet-mapping>
+
+</web-app>
