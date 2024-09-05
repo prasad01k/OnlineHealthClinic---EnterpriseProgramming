@@ -1,5 +1,6 @@
 # OnlineHealthClinic - Web Application Project
-This web application, developed using Enterprise Programming, is designed to streamline healthcare services by offering a virtual platform for medical consultations. The Online Health Clinic enables users to:
+This web application, developed using Enterprise Programming, is designed to streamline healthcare services by offering a virtual platform for medical consultations.<br>
+The Online Health Clinic enables users to:
 <br>
 Schedule Appointments: Book consultations with doctors at their convenience.<br>
 Receive Medical Advice: Get expert medical guidance from professionals online.<br>
